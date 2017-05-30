@@ -1,5 +1,6 @@
 
 var express = require('express');
+
 var app = express();
 
 var moment = require('moment');
@@ -33,39 +34,7 @@ app.get('/', function(request, response) {
   };
   
 
-/*
-app.get('/whoami/:datastring', function(request, response) {
-  
 
-  var date=request.params.datastring;
-  var json = {
-    unix: null,
-    natural: null
-  };
-  
-  var newdate;
-  
-  if(/^\d{8,}$/.test(date)){
-
-  	
-  	newdate = moment(date, "X");
-  } 
-  else{
-  	
-  	newdate = moment(date, "MMMM D, YYYY");
-  } 
-  
- 
-  if(newdate.isValid()) {
-    json.unix=newdate.format("X");
-    json.natural=newdate.format("MMMM D, YYYY");
-  }
-  
-  response.send(json);
-});
-
-
-*/
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
